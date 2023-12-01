@@ -12,7 +12,7 @@ const createNewUser = async( req, res = response ) => {
         if (user) {
             return res.status(400).json({
                 ok:false,
-                mgs: 'Un usuario existente con ese correo'
+                msg: 'Un usuario existente con ese correo'
             });
         }
         user = new User( req.body );
@@ -53,7 +53,7 @@ const loginUser = async( req, res = response ) => {
         if (!user) {
             return res.status(400).json({
                 ok:false,
-                mgs: 'El usuario y contraseña no son correctos'
+                msg: 'El usuario y contraseña no son correctos'
             });
         }
 
@@ -63,7 +63,7 @@ const loginUser = async( req, res = response ) => {
         if (!validPassword) {
             return res.status(400).json({
                 ok:false,
-                mgs: 'check your email or password'
+                msg: 'check your email or password'
             });
         }
 
